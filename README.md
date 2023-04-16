@@ -1,19 +1,31 @@
 
-# Descrição do algoritmo:
+# Descrição do algoritmo
 
 O algoritmo tem como objetivo ler ou gerar um arquivo ".data" de um labirinto composto por uma estrutura de n matrizes, e depois percorrer o labirinto simulando um 
 personagem que se movimenta aleatoriamente entre as posições (x,y) livres. O programa finaliza quando o personagem coleta os itens presentes no caminho até que todo 
 o caminho tenha sido percorrido e que o personagem tenha voltado para a sua posição inicial ou também pode ser finalizando quando o personagem fica sem vida devido aos 
 perigos encontrados no Labirinto.
 
-# Como foi desenvolvido:
+# Como foi desenvolvido
 
 O código foi desenvolvido em linguagem C, utilizando três arquivos: Labirinto.h, Labirinto.c e main.c. O arquivo Labirinto.h contém as definições de structs 
 utilizadas para representar as matrizes e o personagem, além das declarações das funções utilizadas no programa. O arquivo Labirinto.c contém as implementações das 
 funções declaradas no arquivo Labirinto.h. Já o arquivo main.c é responsável por chamar a função Initiation() que inicia o programa.
 
+# Regras Propostas
 
-# Funcionamento:
+- Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posição de sua localização é dada por um valor x,y dessa estrutura. Nesse labirinto há paredes que bloqueiam certos passos (#), perigos que consomem parte de sua vida (*) e trajetórias (valores positivos que devem ser subtraídos em 1 a cada passagem).
+
+- Quanto as paredes #, não há muito o que fazer a não ser desviar e continuar a rota. Já os perigos, a cada passada, tende a subtrair 1 de vida de um total de 10. Assim, ao ficar sem pontos de vida o algoritmo deve parar e indicar fim de jogo.
+
+- Ao decorrer do jogo, a cada passo correto sob uma estrada, o garoto consome um item, subtraindo esse do valor que compõe a posição x,y. Gravando nessa o valor resultante. A cada subtração bem sucedida é preciso, essa vai para um banco de vida que cheio (a cada 4 ações bem sucedidas) lhe retorna 1 de vida em seu contador. Contudo, pode haver partes do caminho com zero itens, esses devem continuar sendo utilizados, porém, sem computar pontuação.
+
+- O labirinto deve ser lido do arquivo input.data, o qual apresentará várias matrizes, todas quadráticas conforme exercício anterior. Sua missão é percorrer as matrizes até que todo o caminho percorrido pelo garoto se torne zero ou que ele venha a morrer devido aos perigos enfrentados. No final é preciso apresentar como resultado: (a) quantas casas foram percorridas ao todo; (b) qual a soma de itens consumidos pelo caminho; (c) quantas casas da matriz ficaram sem serem exploradas; (d) quantos perigos foram enfrentados ao decorrer do percurso.
+
+- Para essa atividade, considere selecionar um passo de cada vez de forma aleatória, ou seja, escolha um valor x,y aleatoriamente e vá para ele se possível ou descarte caso seja uma parede. Perigos não são evitados, então, se a posição escolhida for um, enfrente-o. Por fim, a intenção global do problema não é encontrar uma saída, mas sim, tentar consumir o máximo possível de itens até chegar a zerar as possibilidades desse tipo ou morrer tentando.
+
+
+# Funcionamento
 
 O programa inicia solicitando ao usuário que escolha uma das opções disponíveis no menu. Caso o usuário escolha a opção 1, o programa gera matrizes quadradas 
 aleatórias e as armazena em um arquivo de texto chamado "input.data". Em seguida, é chamada a função Jornada() que é responsável por percorrer todas as matrizes 
@@ -26,13 +38,13 @@ posições da matriz tiverem sido exploradas ou o personagem ficar sem vida.
 
 ## Labirinto
 
-### Tabela de Símbolos:
+### Tabela de Símbolos
 
 | Símbolo              | Significado                                                                                                             | 
 | ---------------------| -------------------------------------------------------------------------------------------------                       |
 |  #                   | `Parede`   O personagem não consegue passar por essa casa                                                               |
 |  *                   | `Perigo`   O personagem perde 1 de vida ao passar por essa casa                                                         |
-| 1,2,3,4,5,6,7,8,9    | `Item`     O personagem pega 1 item ao passar por essa casa, ao colocar 4 itens em sua bolsa ele ganha 1 de vida        |
+| 1,2,3,4,5            | `Item`     O personagem pega 1 item ao passar por essa casa, ao colocar 4 itens em sua bolsa ele ganha 1 de vida        |
 | 0                    | `Vazio`    O personagem anda nessa casa, mas não pega item                                                              |
 
 O labirinto é composto por N matrizes, onde cada matriz é uma sala do jogo. O personagem inicia sua jornada na sala 0 no ponto (0,0).
@@ -40,11 +52,24 @@ O personagem consegue passar de uma sala para a outra atráves de portais que s�
 aleatória mas na mesma posição da sala anterior, existe a chance do personagem ser teletranspotado para uma parede, se isso acontecer o personagem voltará para a sala
 de antes.
 
-# Exemplo de Execução
+### Estrutura de sala
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_4.png)
+- ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/color1.png) - **Zona passável:**
+O personagem consegue passar por essa área
+- ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/color2.png) - **Zona Bloqueada:**
+O personagem não consegue passar por essa área
+- ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/color3.png) - **Zona Portal:**
+O personagem passa para outra sala que estiver com área roxa na mesma posição que essa
+- ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/color4.png) - **Zona Portal Bloqueado:**
+O personagem não consegue passar por essa área e também não consegue teletransportar de outra sala para essa área
+
+# Exemplo de Saída
 
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_1.png)
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_2.png)
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_3.png)
+
+Nesse exemplo podemos ver que inicialmente foi gerado 4 matrizes (esse tamanho está pré-definido para geração de matrizes em QuantMatrizes no código Labirinto.h), o usuário decidiu o tamanho  4x4 e o labirinto foi imprimido na tela, depois se iniciou o caminho feito pelo personagem e por fim o desfexo mostrando os dados propostos.
 
 # Funções 
 
