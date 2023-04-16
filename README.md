@@ -1,0 +1,71 @@
+
+# Descrição do algoritmo:
+
+O algoritmo tem como objetivo ler ou gerar um arquivo ".data" de um labirinto composto por uma estrutura de n matrizes, e depois percorrer o labirinto simulando um 
+personagem que se movimenta aleatoriamente entre as posições (x,y) livres. O programa finaliza quando o personagem coleta os itens presentes no caminho até que todo 
+o caminho tenha sido percorrido e que o personagem tenha voltado para a sua posição inicial ou também pode ser finalizando quando o personagem fica sem vida devido aos 
+perigos encontrados no Labirinto.
+
+# Como foi desenvolvido:
+
+O código foi desenvolvido em linguagem C, utilizando três arquivos: Labirinto.h, Labirinto.c e main.c. O arquivo Labirinto.h contém as definições de structs 
+utilizadas para representar as matrizes e o personagem, além das declarações das funções utilizadas no programa. O arquivo Labirinto.c contém as implementações das 
+funções declaradas no arquivo Labirinto.h. Já o arquivo main.c é responsável por chamar a função Initiation() que inicia o programa.
+
+
+# Funcionamento:
+
+O programa inicia solicitando ao usuário que escolha uma das opções disponíveis no menu. Caso o usuário escolha a opção 1, o programa gera matrizes quadradas 
+aleatórias e as armazena em um arquivo de texto chamado "input.data". Em seguida, é chamada a função Jornada() que é responsável por percorrer todas as matrizes 
+geradas e executar o jogo.Caso o usuário escolha a opção 2, o programa lê as matrizes presentes no arquivo "input.data" e as armazena em uma estrutura de dados. 
+Novamente, a função Jornada() é chamada para percorrer todas as matrizes lidas.
+A função Jornada() é responsável por executar o jogo em cada uma das matrizes. Para isso, ela percorre a matriz aleatoriamente escolhendo uma posição livre e
+avaliando se é possível se mover para ela. Caso seja possível, a função atualiza as informações do personagem (número de passos dados, itens coletados, perigos 
+enfrentados e posições exploradas) e o jogo continua. Caso contrário, o personagem permanece na mesma posição e o jogo continua. O jogo termina quando todas as 
+posições da matriz tiverem sido exploradas ou o personagem ficar sem vida.
+
+## Labirinto
+
+### Tabela de Símbolos:
+
+| Símbolo              | Significado                                                                                                             | 
+| ---------------------| -------------------------------------------------------------------------------------------------                       |
+|  #                   | `Parede`   O personagem não consegue passar por essa casa                                                               |
+|  *                   | `Perigo`   O personagem perde 1 de vida ao passar por essa casa                                                         |
+| 1,2,3,4,5,6,7,8,9    | `Item`     O personagem pega 1 item ao passar por essa casa, ao colocar 4 itens em sua bolsa ele ganha 1 de vida        |
+| 0                    | `Vazio`    O personagem anda nessa casa, mas não pega item                                                              |
+
+O labirinto é composto por N matrizes, onde cada matriz é uma sala do jogo. O personagem inicia sua jornada na sala 0 no ponto (0,0).
+O personagem consegue passar de uma sala para a outra atráves de portais que são localizados nas linhas e colunas extremas das salas. O personagem passa para outra sala 
+aleatória mas na mesma posição da sala anterior, existe a chance do personagem ser teletranspotado para uma parede, se isso acontecer o personagem voltará para a sala
+de antes.
+
+
+# Funções 
+
+- Initiation(): função responsável por iniciar o programa, exibir o menu e chamar as funções correspondentes de acordo com a escolha do usuário.
+- GenerateMatrix(): função responsável por gerar as matrizes aleatórias e armazená-las em um arquivo de texto.
+- PrintMatrix(): função responsável por imprimir as matrizes geradas na tela.
+- ReadMatriz(): função responsável por ler as matrizes presentes no arquivo "input.data" e armazená-las em uma estrutura de dados.
+- Jornada(): função responsável por percorrer o labirinto e executar o jogo.
+# Conclusão:
+
+Em resumo, o algoritmo desenvolvido funciona como foi proposto. A regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
+já que pode levar um tempo considerável para encontrar o caminho correto. A solução apresentada se mostrou eficiente em labirintos de tamanho moderado.
+Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada.
+# Compilação e Execução
+
+A pasta do repositorio possui um arquivo Makefile que contém as instruções para compilar e executar. Para usar essas instruções, você pode usar o terminal do seu sistema
+operacional e navegar até o diretório raiz do projeto.
+
+Existem três comandos principais que você pode usar no Makefile:
+
+
+| Comando                |  Função                                                                                           |                     
+| -----------------------| ------------------------------------------------------------------------------------------------- |
+|  `make clean`          | Apaga a última compilação realizada contida na pasta build                                        |
+|  `make`                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build           |
+|  `make run`            | Executa o programa da pasta build após a realização da compilação                                 |
+
+Em resumo, para executar o programa, você precisa navegar até o diretório raiz do projeto e executar o comando make para compilar o programa e, em seguida, 
+executar o comando make run para executá-lo.Se você precisar limpar a compilação anterior, pode usar o comando make clean antes de executar a compilação.
