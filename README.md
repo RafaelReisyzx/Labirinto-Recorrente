@@ -24,6 +24,13 @@ funções declaradas no arquivo Labirinto.h. Já o arquivo main.c é responsáve
 
 - Para essa atividade, considere selecionar um passo de cada vez de forma aleatória, ou seja, escolha um valor x,y aleatoriamente e vá para ele se possível ou descarte caso seja uma parede. Perigos não são evitados, então, se a posição escolhida for um, enfrente-o. Por fim, a intenção global do problema não é encontrar uma saída, mas sim, tentar consumir o máximo possível de itens até chegar a zerar as possibilidades desse tipo ou morrer tentando.
 
+# Funções 
+
+- Initiation(): função responsável por iniciar o programa, exibir o menu e chamar as funções correspondentes de acordo com a escolha do usuário.
+- GenerateMatrix(): função responsável por gerar as matrizes aleatórias e armazená-las em um arquivo de texto.
+- PrintMatrix(): função responsável por imprimir as matrizes geradas na tela.
+- ReadMatriz(): função responsável por ler as matrizes presentes no arquivo "input.data" e armazená-las em uma estrutura de dados.
+- Jornada(): função responsável por percorrer o labirinto e executar o jogo.
 
 # Funcionamento
 
@@ -69,15 +76,15 @@ O personagem não consegue passar por essa área e também não consegue teletra
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_2.png)
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_3.png)
 
-Nesse exemplo podemos ver que inicialmente foi gerado 4 matrizes (esse tamanho está pré-definido para geração de matrizes em QuantMatrizes no código Labirinto.h), o usuário decidiu o tamanho  4x4 e o labirinto foi imprimido na tela, depois se iniciou o caminho feito pelo personagem e por fim o desfexo mostrando os dados propostos.
+Nesse exemplo podemos ver que inicialmente foi gerado 4 matrizes (Esse tamanho está pré-definido para geração de matrizes em QuantMatrizes no código Labirinto.h.), o usuário decidiu o tamanho  4x4 e o labirinto foi imprimido na tela, depois se iniciou o caminho feito pelo personagem e por fim o desfexo mostrando os dados propostos.
 
-# Funções 
+# Exemplo de Entrada
 
-- Initiation(): função responsável por iniciar o programa, exibir o menu e chamar as funções correspondentes de acordo com a escolha do usuário.
-- GenerateMatrix(): função responsável por gerar as matrizes aleatórias e armazená-las em um arquivo de texto.
-- PrintMatrix(): função responsável por imprimir as matrizes geradas na tela.
-- ReadMatriz(): função responsável por ler as matrizes presentes no arquivo "input.data" e armazená-las em uma estrutura de dados.
-- Jornada(): função responsável por percorrer o labirinto e executar o jogo.
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_5.png)
+Aquí podemos ver um exemplo de arquivo input.data, na primeira linha tem 3 números inteiros, esses servem para configurar as estruturas do Labirinto, 
+o primeiro e o segundo número representam as linhas e colunas das matrizes (Esses números precisam ser iguais pois está configurado para matrizes quadradas.) e o terceiro número representa a quantidade de matrizes.
+As linhas seguintes são as matrizes que serão lidas, elas precisam estar separadas por espaços como é mostrado nesse exemplo.
+
 # Conclusão:
 
 Em resumo, o algoritmo desenvolvido funciona como foi proposto. A regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
