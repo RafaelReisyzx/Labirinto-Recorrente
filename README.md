@@ -70,7 +70,7 @@ O personagem passa para outra sala que estiver com área roxa na mesma posição
 - ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/color4.png) - **Zona Portal Bloqueado:**
 O personagem não consegue passar por essa área e também não consegue teletransportar de outra sala para essa área
 
-# Exemplo de Saída
+# Exemplo de Saída Gerado
 
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_1.png)
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_2.png)
@@ -85,11 +85,17 @@ Aquí podemos ver um exemplo de arquivo input.data, na primeira linha tem 3 núm
 o primeiro e o segundo número representam as linhas e colunas das matrizes (Esses números precisam ser iguais pois está configurado para matrizes quadradas.) e o terceiro número representa a quantidade de matrizes.
 As linhas seguintes são as matrizes que serão lidas, elas precisam estar separadas por espaços como é mostrado nesse exemplo.
 
+## Resultado da Entrada acima
+
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_6.png)
+Podemos ver que nesse exemplo o personagem conseguiu sobreviver, pois não havia perigo no labirinto
+
 # Conclusão:
 
-Em resumo, o algoritmo desenvolvido funciona como foi proposto. A regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
+Em resumo, a regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
 já que pode levar um tempo considerável para encontrar o caminho correto. A solução apresentada se mostrou eficiente em labirintos de tamanho moderado.
-Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada.
+Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada. 
+
 # Compilação e Execução
 
 A pasta do repositorio possui um arquivo Makefile que contém as instruções para compilar e executar. Para usar essas instruções, você pode usar o terminal do seu sistema
