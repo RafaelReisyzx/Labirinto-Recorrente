@@ -90,7 +90,7 @@ int GenerateMatrix(int n,int k){
 
 void PrintMatrix(int n,int k){
 	int i,j;
-		printf("\nMatriz %d\n\n",k+1);
+		printf("\nSala %d\n\n",k);
 	for(i = 0; i < n; i++){
 		for(j = 0; j < n; j++){
 			printf("%c ", Matrizes[k].matrix[i][j]);
@@ -160,7 +160,9 @@ int Jornada(int n,int tam)
 	Garoto.perigos=0;
 	Garoto.sacola=0;
 	Matrizes[k].caminho[i][j]=Matrizes[k].matrix[i][j];
-	
+		printf("\nCaminho\n");
+		printf("\n-------------------------------------------");
+		printf("\n |Sala [0]|\n ");
 	for(;;)
 	{
 		
@@ -173,7 +175,8 @@ int Jornada(int n,int tam)
     		
     		if(Garoto.hp==0)	
 	{
-		 printf("\n\nO garoto não conseguiu sobreviver dentro do Labirinto\n");
+			printf("\n-------------------------------------------");
+		 printf("\n\nO garoto nao conseguiu sobreviver dentro do Labirinto\n");
 		 printf("\nDados da Jornada:\n");
 		 printf("\nQuantidade de passos:%d ",Garoto.passos);
 		 printf("\nQuantidade de itens consumidos:%d ",Garoto.itens);
@@ -189,14 +192,13 @@ int Jornada(int n,int tam)
 		 		}
 		 		
 		 	}
-		 printf("\nQuantidade de casa Inexploradas :%d ",Garoto.Inexplorado);
+		 printf("\nQuantidade de casas Inexploradas :%d ",Garoto.Inexplorado);
 		 		
 		return 0;
      	
 	}
 	
     	}else if(Matrizes[k].matrix[i][j]=='#'){
-    		printf("\nO garoto entrou na backroom");
 	}else if(Matrizes[k].matrix[i][j]>'0'){
     	Matrizes[k].matrix[i][j]=Matrizes[k].matrix[i][j]-1;	
     	Matrizes[k].caminho[i][j]=Matrizes[k].caminho[i][j]-1;
@@ -359,14 +361,16 @@ int Jornada(int n,int tam)
 	data = rand()%tam;	
 	x=k;
 	k=data;
+		printf("\n-------------------------------------------");	
+		printf("\n\n |Passou para a sala %d| \n", data);
 
 	if(Matrizes[k].matrix[i][j]=='#')
 	{
-	k=x;
+	k=x;	
+		printf("\n |O caminho estava bloqueado, voltou para a sala %d| \n", k);	
 			
 	}
-	printf("\n-------------------------------------------");	
-		printf("\n\n |Teletransportou para a sala %d| \n", data);				
+				
 	}else if(j==0){
 
 	data = rand()%tam;	
@@ -377,10 +381,10 @@ int Jornada(int n,int tam)
 	if(Matrizes[k].matrix[i][j]=='#')
 	{
 	k=x;
-			
+			printf("\n |O caminho estava bloqueado, voltou para a sala %d| \n", k);		
 	}
 		printf("\n-------------------------------------------");	
-			printf("\n\n |Teletransportou para a sala %d| \n", data);
+			printf("\n\n |Passou para a sala %d| \n", data);
 	}else if(i==n){
 
 	data = rand()%tam;	
@@ -391,10 +395,10 @@ int Jornada(int n,int tam)
 	if(Matrizes[k].matrix[i][j]=='#')
 	{
 	k=x;
-			
+		printf("\n |O caminho estava bloqueado, voltou para a sala %d| \n", k);		
 	}
 		printf("\n-------------------------------------------");	
-			printf("\n\n |Teletransportou para a sala %d| \n", data);
+			printf("\n\n |Passou para a sala %d| \n", data);
 	}else if(j==n){
 		
 	data = rand()%tam;	
@@ -405,10 +409,10 @@ int Jornada(int n,int tam)
 	if(Matrizes[k].matrix[i][j]=='#')
 	{
 	k=x;
-			
+		printf("\n |O caminho estava bloqueado, voltou para a sala %d| \n", k);		
 	}
 		printf("\n-------------------------------------------");	
-		printf("\n\n |Teletransportou para o Mundo %d| \n", data);	
+		printf("\n\n |Passou para a Sala %d| \n", data);	
 	}
 
 	//Verificar se está no inicio
@@ -427,7 +431,8 @@ int Jornada(int n,int tam)
 		
 		if(ok==1)
 		{
-		 printf("\n\nO garoto terminou a jornada com segurança\n");
+		 printf("\n-------------------------------------------");
+		 printf("\n\nO garoto terminou a jornada com vida\n");
 		 printf("\nDados da Jornada:\n");
 		 printf("\nQuantidade de passos:%d ",Garoto.passos);
 		 printf("\nQuantidade de itens consumidos:%d ",Garoto.itens);
@@ -458,6 +463,8 @@ int Jornada(int n,int tam)
 
 
 	
+
+
 
 
 
