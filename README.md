@@ -76,7 +76,7 @@ O personagem não consegue passar por essa área e também não consegue teletra
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_2.png)
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_3.png)
 
-Nesse exemplo podemos ver que inicialmente foi gerado 4 matrizes (Esse tamanho está pré-definido para geração de matrizes em QuantMatrizes no código Labirinto.h.), o usuário decidiu o tamanho  4x4 e o labirinto foi imprimido na tela, depois se iniciou o caminho feito pelo personagem e por fim o desfexo mostrando os dados propostos.
+Nesse exemplo podemos ver que inicialmente foi gerado 4 matrizes (Esse tamanho está pré-definido para geração de matrizes em QuantMatrizes no código Labirinto.h.), o usuário decidiu o tamanho  4x4 e o labirinto foi imprimido na tela, depois se iniciou o caminho feito pelo personagem e por fim é mostrado os dados da jornada.
 
 # Exemplo de Entrada
 
