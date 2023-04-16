@@ -40,6 +40,11 @@ O personagem consegue passar de uma sala para a outra atráves de portais que s�
 aleatória mas na mesma posição da sala anterior, existe a chance do personagem ser teletranspotado para uma parede, se isso acontecer o personagem voltará para a sala
 de antes.
 
+# Exemplo de Execução
+
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_1.png)
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_2.png)
+![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_3.png)
 
 # Funções 
 
