@@ -23,7 +23,7 @@ int Inexplorado;
 	
 		
 Matriz Matrizes[QuantMatriz];
-int Initiation();
+void Initiation();
 int GenerateMatrix(int n,int k);
 void PrintMatrix(int n,int k);
 void ReadMatriz();
