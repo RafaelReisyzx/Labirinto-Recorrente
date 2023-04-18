@@ -5,6 +5,7 @@
 #include <time.h>
 #define QuantMatriz 7
 #include <unistd.h>
+#include <ctype.h>
 
 typedef struct Matriz{
 char matrix[100][100];
