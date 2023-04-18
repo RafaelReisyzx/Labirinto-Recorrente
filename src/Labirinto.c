@@ -1,6 +1,6 @@
 #include "Labirinto.h"
 
-int Initiation()
+void Initiation()
 {
 	int k,n=0,opcao;
 
@@ -26,7 +26,7 @@ int Initiation()
 		ReadMatriz();		
 		}
 		else if(opcao == 0){
-			return 0;
+		
 		}
 		else{
 		printf("\nOpção inválida\n");
@@ -150,7 +150,7 @@ int Jornada(int n,int tam)
 {
     
 	Personagem Garoto;
-	int i=0,j=0,r=0,x=0,y=0,z=0,k=0,data=0,a,b,c,ok=0,opcao,visualizacao=0;
+	int i=0,j=0,r=0,x=0,k=0,data=0,a,c,b,ok=0,opcao,visualizacao=0;
 	int Direita=0,Esquerda=0,Baixo=0,Cima=0,DiagonalEsquerdaSuperior=0,DiagonalDireitaSuperior=0,DiagonalEsquerdaInferior=0,DiagonalDireitaInferior=0;
 	Garoto.hp=10;
 	Garoto.Inexplorado=0;
@@ -167,11 +167,6 @@ int Jornada(int n,int tam)
 		}else{
 			visualizacao=0;
 		}
-		if(Matrizes[0].caminho[0][0]=='#')
-		{
-			Matrizes[0].caminho[0][0]=='0';
-		}
-
 		
 			if(visualizacao==1){
 		printf("\nCaminho\n");
@@ -514,11 +509,6 @@ int Jornada(int n,int tam)
 
 
 	
-
-
-
-
-
 
 
 
