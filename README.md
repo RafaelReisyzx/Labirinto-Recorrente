@@ -90,8 +90,15 @@ As linhas seguintes são as matrizes que serão lidas, elas precisam estar separ
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_6.png)
 Podemos ver que nesse exemplo o personagem conseguiu sobreviver, pois não havia perigo no labirinto
 
+# Discussão
+
+Uma das principais questões que surgem em relação a este problema é o custo computacional da solução proposta. A escolha aleatória de movimentos pode levar a uma grande quantidade de tentativas frustradas e, consequentemente, a um elevado tempo de execução. 
+Outra questão relevante é a eficácia da estratégia randômica adotada. Embora essa abordagem possa parecer intuitiva, ela pode não ser a mais adequada para resolver o problema proposto. Em vez disso, uma abordagem mais sistemática, que leve em consideração fatores como a posição atual do personagem e a localização dos itens e perigos no labirinto, pode ser mais eficiente.
+Em geral, É importante avaliar cuidadosamente a solução proposta em relação ao seu custo computacional e eficácia, a fim de garantir que ela possa ser aplicada de forma prática e eficiente.
+
 # Conclusão:
 
+O problema apresentado trata de um desafio em que um garoto se encontra perdido em um labirinto e deve encontrar uma saída enquanto coleta itens e evita perigos. A solução proposta envolve a leitura de matrizes a partir de um arquivo e a escolha aleatória de movimentos, que podem ser bloqueados por paredes ou reduzir a vida do personagem.
 Em resumo, a regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
 já que pode levar um tempo considerável para encontrar o caminho correto. A solução apresentada se mostrou eficiente em labirintos de tamanho moderado.
 Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada. 
