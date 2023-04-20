@@ -28,5 +28,6 @@ int GenerateMatrix(int n,int k);
 void PrintMatrix(int n,int k);
 void ReadMatriz();
 int Jornada(int n,int k);
+void Finalization(int n,int k);
  
 #endif
