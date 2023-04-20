@@ -31,6 +31,13 @@ funções declaradas no arquivo Labirinto.h. Já o arquivo main.c é responsáve
 - PrintMatrix(): função responsável por imprimir as matrizes geradas na tela.
 - ReadMatriz(): função responsável por ler as matrizes presentes no arquivo "input.data" e armazená-las em uma estrutura de dados.
 - Jornada(): função responsável por percorrer o labirinto e executar o jogo.
+1° parte verificar casa/hp/perigo/morte
+2° parte verificar sacola
+3° parte demarcar paredes
+4° parte caminhar
+5° parte verificar portal
+6° parte verificar se voltou para o inicio
+
 
 # Funcionamento
 
