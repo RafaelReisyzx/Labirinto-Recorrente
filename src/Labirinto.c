@@ -29,7 +29,7 @@ void Initiation()
 		
 		}
 		else{
-		printf("\nOpção inválida\n");
+		printf("\nOpÃ§Ã£o invÃ¡lida\n");
 		}
 
 }
@@ -235,8 +235,6 @@ int Jornada(int n,int tam)
 	      	printf("\n |Curou 1 de vida| ");
        }
 	}
-		if(visualizacao==1)
-		printf("\n |Sacola:%d|",Garoto.sacola);
 	//Demarcar Paredes
 	//cima
 	if(Matrizes[k].matrix[i-1][j]=='#')
@@ -458,7 +456,7 @@ int Jornada(int n,int tam)
 	
 	}
 
-	//Verificar se está no inicio
+	//Verificar se estÃ¡ no inicio
 	if(i==0&&j==0)
 	{
 		ok=1;
@@ -511,7 +509,7 @@ int Jornada(int n,int tam)
 
 void Finalization(int n,int tam)
 {
-	
+	int k,i,j;
 	FILE *g = fopen("dataset/output.data", "a");
     if (g == NULL) {
         printf("Erro ao abrir o arquivo para escrita\n");
@@ -526,7 +524,7 @@ void Finalization(int n,int tam)
 			 fprintf(g, "%c ", Matrizes[k].matrix[i][j]);
 		}
 		printf("\n");
-		 fprintf(f, "\n");
+		 fprintf(g, "\n");
 	}
 		printf("\n");
 		 fprintf(g, "\n");
@@ -537,7 +535,6 @@ void Finalization(int n,int tam)
 
 
 	
-
 
 
 
