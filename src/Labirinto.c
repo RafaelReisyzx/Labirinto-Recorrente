@@ -203,6 +203,7 @@ int Jornada(int n,int tam)
 		 		
 		 	}
 		 printf("\nQuantidade de casas Inexploradas :%d ",Garoto.Inexplorado);
+		 Finalization(n,tam);
 		 		
 		return 0;
      	
@@ -496,6 +497,7 @@ int Jornada(int n,int tam)
 		 		
 		 	}
 		 printf("\nQuantidade de casas Inexploradas :%d ",Garoto.Inexplorado);
+			Finalization(n,tam);
 		 		 
 		 return 0;
 		}
@@ -503,6 +505,32 @@ int Jornada(int n,int tam)
 	
 	
 		}
+	
+	
+}
+
+void Finalization(int n,int tam)
+{
+	
+	FILE *g = fopen("dataset/output.data", "a");
+    if (g == NULL) {
+        printf("Erro ao abrir o arquivo para escrita\n");
+        exit(EXIT_FAILURE);
+    }
+	
+	printf("\nMapa Atualizado:\n\n");
+	for(k = 0;k < tam; k++){
+	for(i = 0; i < n; i++){
+		for(j = 0; j < n; j++){
+			printf("%c ", Matrizes[k].matrix[i][j]);
+			 fprintf(g, "%c ", Matrizes[k].matrix[i][j]);
+		}
+		printf("\n");
+		 fprintf(f, "\n");
+	}
+		printf("\n");
+		 fprintf(g, "\n");
+	}
 	
 	
 }
