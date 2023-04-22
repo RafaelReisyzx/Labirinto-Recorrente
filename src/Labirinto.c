@@ -176,7 +176,7 @@ int Jornada(int n,int tam)
 	for(;;)
 	{
 	
-	//Verificador de casa
+	//1° Etapa Verificador de casa
 	
 		if(Matrizes[k].matrix[i][j]=='*'){	
     		Garoto.hp=Garoto.hp-1;
@@ -224,7 +224,7 @@ int Jornada(int n,int tam)
     	Garoto.sacola=Garoto.sacola+1;
     }
 	   }
-	//Verificador de Sacola
+	//2° EtapaVerificador de Sacola
 	if(Garoto.sacola==4)
 	{
 		if(Garoto.hp<10)
@@ -235,7 +235,7 @@ int Jornada(int n,int tam)
 	      	printf("\n |Curou 1 de vida| ");
        }
 	}
-	//Demarcar Paredes
+	//3° EtapaDemarcar Paredes
 	//cima
 	if(Matrizes[k].matrix[i-1][j]=='#')
 	{
@@ -276,7 +276,7 @@ int Jornada(int n,int tam)
 	{
 		DiagonalDireitaInferior=-1;
 	}
-//Escolher caminho possivel de caminhar
+//4° Etapa Escolher caminho possivel de caminhar
 	for(r=0;r<1;)
 	{
 	data = rand()%8;
@@ -299,7 +299,7 @@ int Jornada(int n,int tam)
 	r=1;	
 	}	
    }
-   //Caminhar
+   //5° Etapa Caminhar
 	
 	if(data==1)
 	{
@@ -381,7 +381,7 @@ int Jornada(int n,int tam)
 		r=0;
 	
 
-	//Verificador de Portal
+	//6° Etapa Verificador de Portal
 	if(i==0){
 	
 	data = rand()%tam;	
@@ -456,7 +456,7 @@ int Jornada(int n,int tam)
 	
 	}
 
-	//Verificar se estÃ¡ no inicio
+	//7° Etapa Verificar se está no inicio
 	if(i==0&&j==0)
 	{
 		ok=1;
