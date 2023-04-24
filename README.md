@@ -24,6 +24,12 @@ funções declaradas no arquivo Labirinto.h. Já o arquivo main.c é responsáve
 
 - Para essa atividade, considere selecionar um passo de cada vez de forma aleatória, ou seja, escolha um valor x,y aleatoriamente e vá para ele se possível ou descarte caso seja uma parede. Perigos não são evitados, então, se a posição escolhida for um, enfrente-o. Por fim, a intenção global do problema não é encontrar uma saída, mas sim, tentar consumir o máximo possível de itens até chegar a zerar as possibilidades desse tipo ou morrer tentando.
 
+# Discussão
+
+Uma das principais questões que surgem em relação a este problema é o custo computacional da solução proposta. A escolha aleatória de movimentos pode levar a uma grande quantidade de tentativas frustradas e, consequentemente, a um elevado tempo de execução. Essa abordagem acaba sendo bastante custosa computacionalmente.
+Quando escolhemos aleatoriamente um movimento para tentar resolver o quebra-cabeça, há uma chance significativa de que esse movimento não nos leve à solução. Pode ser necessário tentar vários movimentos aleatórios antes de finalmente encontrar um que nos leve à solução. Isso pode resultar em um tempo de execução elevado, especialmente para quebra-cabeças maiores.
+Além disso, a complexidade do problema aumenta exponencialmente com o tamanho do labirinto. Isso significa que, para labirintos maiores, o tempo de execução pode se tornar proibitivo, mesmo com uma abordagem aleatória.
+
 # Funções 
 
 - Initiation(): função responsável por iniciar o programa, exibir o menu e chamar as funções correspondentes de acordo com a escolha do usuário.
@@ -106,18 +112,12 @@ As linhas seguintes são as matrizes que serão lidas, elas precisam estar separ
 ![This is an image](https://github.com/RafaelReisyzx/Labirinto-Recorrente/blob/main/imgs/img_6.png)
 Podemos ver que nesse exemplo o personagem conseguiu sobreviver, pois não havia perigo no labirinto
 
-# Discussão
-
-Uma das principais questões que surgem em relação a este problema é o custo computacional da solução proposta. A escolha aleatória de movimentos pode levar a uma grande quantidade de tentativas frustradas e, consequentemente, a um elevado tempo de execução. 
-Outra questão relevante é a eficácia da estratégia randômica adotada. Embora essa abordagem possa parecer intuitiva, ela pode não ser a mais adequada para resolver o problema proposto. Em vez disso, uma abordagem mais sistemática, que leve em consideração fatores como a posição atual do personagem e a localização dos itens e perigos no labirinto, pode ser mais eficiente.
-Em geral, É importante avaliar cuidadosamente a solução proposta em relação ao seu custo computacional e eficácia, a fim de garantir que ela possa ser aplicada de forma prática e eficiente.
 
 # Conclusão:
 
-O problema apresentado trata de um desafio em que um garoto se encontra perdido em um labirinto e deve encontrar uma saída enquanto coleta itens e evita perigos. A solução proposta envolve a leitura de matrizes a partir de um arquivo e a escolha aleatória de movimentos, que podem ser bloqueados por paredes ou reduzir a vida do personagem.
-Em resumo, a regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, 
-já que pode levar um tempo considerável para encontrar o caminho correto. A solução apresentada se mostrou eficiente em labirintos de tamanho moderado.
-Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada. 
+Em resumo, a regra randômica utilizada para movimentar o personagem pode ter um alto custo computacional em labirintos muito grandes, já que pode levar um tempo considerável para encontrar o caminho correto ou finalizar com morte. A solução apresentada mostrou-se eficiente em labirintos de tamanho moderado, não demorando muito para finalizar.
+Ao testar o algoritmo várias vezes com labirintos aleatórios, você perceberá que na maioria das vezes o garoto não consegue sobreviver, pois a chance de ele conseguir voltar para o ponto inicial após pegar todos os itens das casas pelas quais ele passou é bem baixa.
+Dessa forma, é possível concluir que o algoritmo desenvolvido é uma solução interessante para visualizar e testar o custo computacional de acordo com o tamanho da entrada.
 
 # Compilação e Execução
 
